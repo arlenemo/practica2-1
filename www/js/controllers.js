@@ -37,10 +37,10 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  //$scope.chats = Chats.all();
-  $scope.chats = [];
+  $scope.chats = Chats.all();
+  //$scope.chats = [];
   
-  
+  /*
   $cordovaSQLite.execute(db, 'SELECT * FROM agenda ORDER BY id DESC')
        .then(
           function(result) {
@@ -58,7 +58,12 @@ angular.module('starter.controllers', [])
                     $scope.statusMessage = "Error on loading: " + error.message;
                 }
         );
-  
+  */
+
+  $scope.getAll = function()
+  {
+      $scope.chats = Chats.all();
+  };
   
   $scope.remove = function(chat) {
     Chats.remove(chat);
